@@ -24,7 +24,11 @@ for pref in prefectures:
     df = pd.DataFrame(index=[], columns=cols)
 
     for i in range(len(json_data['itemList'])):
-        if json_data['itemList'][i]['name_jp'] == pref:
+        pattern = '2020'
+        content =json_data['itemList'][i]['date']
+        result = re.match(pattern, content)
+        
+        if json_data['itemList'][i]['name_jp'] == pref and result:
             data = json_data['itemList'][i]['date']
             npatient = int(json_data['itemList'][i]['npatients'])
 
