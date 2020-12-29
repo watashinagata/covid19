@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 import pandas as pd
 import numpy as np
+import re
 
 st.title('covid19感染者数')
 
